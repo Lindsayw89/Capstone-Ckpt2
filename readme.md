@@ -27,3 +27,10 @@ We are used to working on an Angular app that is based on the root level. In thi
 * Remember to upload the certificate `capstone.pfx`
 * The certificate password is `capstone`
 * Make sure to add the application setting `WEBSITE_LOAD_CERTIFICATES` with the value of the certificate thumbprint
+ 
+ ## Core Functions
+ User can create a chore board
+ user can add a user to their board
+ can add chores to their board
+ can view all chores across all boards
+ can assign chores to users
