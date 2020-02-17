@@ -1,0 +1,38 @@
+<h1 id="tableLabel">Workouts</h1>
+
+<p *ngIf="!workouts"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="workouts">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let wo of workouts">
+      <td>{{ wo.title }}</td>
+      <td>{{ wo.description }}</td>
+      <td>{{ wo.workoutType }}</td>
+      <td>{{ wo.calories }}</td>
+      <td>{{ wo.workoutDate }}</td>
+
+    </tr>
+  </tbody>
+</table>
+Title
+<input [(ngModel)]="newWorkout.title" name="title" />
+
+Description
+<input [(ngModel)]="newWorkout.description" name="description" />
+
+Type of Workout
+<input [(ngModel)]="newWorkout.workoutType" name="workoutType" />
+
+Calories Burned
+<input [(ngModel)]="newWorkout.calories" name="calories" />
+
+Date
+<input [(ngModel)]="newWorkout.workoutDate" name="workoutDate" />
+
+<button (click)="saveWorkout()">Save</button>

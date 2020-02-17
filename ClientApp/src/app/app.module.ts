@@ -14,6 +14,8 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { TeacherComponent } from './teacher/teacher.component';
+import { BoardComponent } from './board/board.component';
+import { WorkoutComponent } from './workout/workout.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { TeacherComponent } from './teacher/teacher.component';
     CounterComponent,
     FetchDataComponent,
     StudentsComponent,
-    TeacherComponent
+    TeacherComponent,
+    BoardComponent,
+    WorkoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +40,8 @@ import { TeacherComponent } from './teacher/teacher.component';
         { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
         { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
         { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
+        { path: 'boards', component: BoardComponent, canActivate: [AuthorizeGuard] },
+        { path: 'workouts', component: WorkoutComponent, canActivate: [AuthorizeGuard] },
     ])
   ],
   providers: [
