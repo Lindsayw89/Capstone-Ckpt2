@@ -5,8 +5,11 @@
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="workouts">
   <thead>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>Workout</th>
+      <th>Desctiption</th>
+      <th>Description</th>
+      <th>Calories burned</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
@@ -30,7 +33,7 @@ Type of Workout
 <input [(ngModel)]="newWorkout.workoutType" name="workoutType" />
 
 Calories Burned
-<input [(ngModel)]="newWorkout.calories" name="calories" />
+<input type="number" [(ngModel)]="newWorkout.calories" name="calories" />
 
 Date
 <input [(ngModel)]="newWorkout.workoutDate" name="workoutDate" />
