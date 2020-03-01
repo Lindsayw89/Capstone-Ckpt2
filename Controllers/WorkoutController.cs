@@ -38,5 +38,43 @@ namespace capstone.Controllers
             return workout;
         }
 
+
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id )
+        {
+          //  using (var context = new ApplicationDbContext())
+          //  {
+               
+               // context.Remove(id);
+              //  context.SaveChanges();
+              //  return NoContent();
+
+
+                using (ApplicationDbContext context = new ApplicationDbContext())
+                {
+                    var deleteworkout = context.Workouts.FirstOrDefault(w => w.Id == id);
+                if (deleteworkout != null) {
+                    context.Workouts.Remove(deleteworkout);
+                    context.SaveChanges();
+                    
+                }
+                return NoContent();
+            }
+           
+
+           // }
+
+        
+
+
+
+        }
+
+    
+
+
+
+
     }
 }

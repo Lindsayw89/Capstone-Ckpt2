@@ -16,6 +16,10 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { TeacherComponent } from './teacher/teacher.component';
 import { BoardComponent } from './board/board.component';
 import { WorkoutComponent } from './workout/workout.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import{MatTableModule} from '@angular/material/table';
+import {MatSortModule, MatInputModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,9 @@ import { WorkoutComponent } from './workout/workout.component';
         { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
         { path: 'boards', component: BoardComponent, canActivate: [AuthorizeGuard] },
         { path: 'workouts', component: WorkoutComponent, canActivate: [AuthorizeGuard] },
-    ])
+    ]),
+    NoopAnimationsModule, MatTableModule, MatSortModule,MatInputModule,
+    MatButtonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
